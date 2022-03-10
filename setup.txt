@@ -1,0 +1,16 @@
+/Users/111/mongodb/bin/mongod.exe --dbpath=/Users/111/mongodb-data
+
+mongodb.js
+CRUD create read update delete
+
+const { MongoClient, ObjectId } = require('mongodb');
+
+const connectionURL = 'mongodb://127.0.0.1:27017';
+const databaseName = 'task-manager';
+
+MongoClient.connect(connectionURL, { useNewURLParser: true }, (error, client) => {
+     if (error) {
+         return console.log('Unanble to connect to database');
+     };
+     const db = client.db(databaseName);
+});
